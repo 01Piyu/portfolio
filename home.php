@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photographer Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo-wrapper">
+                <a class="logo" href="index.html"> <strong>JV</strong> Jack Venilli </a>
+            </div>
+<ul class="navbar-links">
+                <li class="nav-item"><a class="nav-link active" href="home.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="workgallery.html">Works</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="header">
+        <div class="container">
+            <div class="box">
+                <h4 class="">Hello there !</h4>
+                <h1 class=""><?php
+          include 'connect.php';
+          $query = "SELECT title, description FROM about_us";
+          
+          $result = mysqli_query($conn, $query);
+          if (mysqli_num_rows($result) > 0) {
+            
+            while ($row = mysqli_fetch_assoc($result)) {
+                
+              echo $row['title'];
+            }
+          } 
+        ?></h1>
+                <p class="">
+                <?php
+          include 'connect.php';
+          $query = "SELECT title, description FROM about_us";
+          
+          $result = mysqli_query($conn, $query);
+          if (mysqli_num_rows($result) > 0) {
+            
+            while ($row = mysqli_fetch_assoc($result)) {
+                
+              echo $row['description'];
+            }
+          } 
+        ?>
+                </p>
+                <a href="workgallery.html" class="btn">My works</a>
+                <a href="contact.html" class="btn">Contact me</a>
+            </div>
+
+        </div>
+    </div>
+
+
+   
+ <footer class="footer">
+        <div class="newsletter">
+            <div class="container">
+                <div class="box">
+                    <h2>Sign up to get latest update</h2>
+                    <p>Sign up for our monthly newsletter for the latest news &amp; articles</p>
+                </div>
+                <div class="form">
+                    <form>
+                        <input type="email" name="email" placeholder="Enter Email Address" required="">
+                        <button>Subscribe Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="second-footer">
+            <div class="container">
+                <div class="box">
+                    <div class="logo-wrapper">
+                        <a class="logo" href="index.html"> <strong>JV</strong> Pixel5 </a>
+                    </div>
+                    <div class="text">
+                        <p>“Taking pictures is like tiptoeing into the kitchen late at night and stealing Oreo cookies.”</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <h3 class="title">Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="workgallery.html">Works</a></li>
+                    </ul>
+                </div>
+
+                <div class="box">
+                    <h3 class="title">Contact</h3>
+                    <ul>
+                        <li>
+                            <i class="Phone number"></i>
+                            <span>
+                                +977 9843690873
+                            </span>
+                        </li>
+                        <li>
+                            <i class="fa fa-at"></i>
+                            <span>
+                                piyu123@gmail.com
+                            </span>
+                        </li>
+                        <li>
+                            <span>
+                                Butwal, Nepal.
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class=" copyright">
+            <div class="box">
+                <p class="">Copyright © 2023 by <a href="#">Nepal</a>. All rights reserved.</p>
+            </div>
+            <div class="box">
+                <ul class="social-icons">
+                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
